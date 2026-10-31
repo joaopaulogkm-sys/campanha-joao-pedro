@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102746">
+<meta name="description" content="Ajude João Pedro em seu tratamento e na compra de medicamentos. Toda ajuda é bem-vinda!">
+<title>Juntos pelo Bem | Ajude João Pedro</title>
+
+<style>
+:root {
+  --navy: #102746;
+  --blue: #24558b;
+  --cream: #f5f0e7;
+  --copper: #b47b52;
+  --white: #fff;
+  --text: #263447;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+.brand span { color: #d8ad88; }
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-button {
+  background: var(--copper);
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(135deg, #102746, #24558b);
+  color: white;
+  padding: 65px 7%;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #e5bd98;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 49px);
+  line-height: 1.13;
+  margin: 15px 0;
+}
+
+.hero p {
+  color: #e5ebf2;
+  font-size: 17px;
+}
+
+.hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 13px;
+  border: 5px solid rgba(255,255,255,.15);
+}
+
+.primary-button {
+  display: inline-block;
+  background: var(--copper);
+  color: white;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-title {
+  color: var(--navy);
+  font-size: 30px;
+  margin: 0 0 18px;
+}
+
+.story {
+  background: white;
+}
+
+.story p {
+  font-size: 17px;
+  color: #536174;
+}
+
+.photo-section {
+  background: #eae3d8;
+}
+
+.photo-section img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.photo-caption {
+  color: #687487;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.donation {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+
+.donation .section-title { color: white; }
+
+.donation-intro {
+  color: #dce5ef;
+  max-width: 620px;
+  margin: 0 auto 30px;
+}
+
+.donation-grid {
+  max-width: 760px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.donation-button {
+  display: block;
+  padding: 17px 10px;
+  background: white;
+  color: var(--navy);
+  border: 1px solid #d5dce5;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.donation-button:hover {
+  background: #ead8c7;
+  transform: translateY(-2px);
+}
+
+.donation-button small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  color: #657286;
+}
+
+.share {
+  background: var(--cream);
+  text-align: center;
+}
+
+.share-button {
+  border: 0;
+  background: var(--blue);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 6px;
+}
+
+footer {
+  background: #0b1c31;
+  color: #d9e0e8;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 13px;
+}
+
+footer strong { color: white; }
+
+@media(max-width: 720px) {
+  header { padding: 16px 5%; }
+  .brand { font-size: 18px; }
+  .header-button { padding: 9px 12px; font-size: 13px; }
+  .hero { padding: 45px 6%; }
+  .hero-inner { grid-template-columns: 1fr; gap: 25px; }
+  .hero img { height: 330px; }
+  section { padding: 48px 6%; }
+  .donation-grid { grid-template-columns: repeat(2, 1fr); }
+  .section-title { font-size: 26px; }
+}
+
+@media(max-width: 360px) {
+  .donation-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">Juntos <span>pelo Bem</span></div>
+  <a class="header-button" href="#contribuir">Fazer uma contribuição</a>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Uma campanha de solidariedade</div>
+      <h1>Ajude João Pedro em Seu Tratamento e na Compra de Medicamentos</h1>
+      <p>João Pedro tem apenas 3 anos e está enfrentando um momento delicado de saúde. Sua família precisa de apoio neste momento.</p>
+      <a class="primary-button" href="#contribuir">Quero ajudar João Pedro</a>
+    </div>
+
+    <img src="foto-joao-1.jpg" alt="Fotografia de João Pedro">
+  </div>
+</div>
+
+<section class="story">
+  <div class="section-inner">
+    <div class="eyebrow">Conheça a campanha</div>
+    <h2 class="section-title">Toda ajuda faz diferença</h2>
+
+    <p>João Pedro tem apenas 3 anos e está enfrentando um momento delicado de saúde. Sua família precisa de apoio para custear seu tratamento, adquirir medicamentos e atender às necessidades relacionadas aos seus cuidados.</p>
+
+    <p>A campanha é organizada pela Juntos pelo Bem, em parceria com os pais de João Pedro, com o objetivo de reunir pessoas solidárias para ajudar a família neste momento tão difícil.</p>
+
+    <p>Toda ajuda é bem-vinda! Sua contribuição pode fazer a diferença na vida de João Pedro e trazer mais tranquilidade para sua família.</p>
+
+    <p>Se não puder contribuir financeiramente, compartilhar esta campanha também será uma grande ajuda.</p>
+
+    <p><strong>Vamos juntos cuidar do João Pedro!</strong></p>
+  </div>
+</section>
+
+<section class="photo-section">
+  <div class="section-inner">
+    <img src="foto-joao-2.jpg" alt="Segunda fotografia de João Pedro">
+    <p class="photo-caption">Juntos pelo Bem — uma corrente de solidariedade.</p>
+  </div>
+</section>
+
+<section class="donation" id="contribuir">
+  <div class="section-inner">
+    <div class="eyebrow">Sua solidariedade importa</div>
+    <h2 class="section-title">Escolha o valor da sua contribuição</h2>
+    <p class="donation-intro">Qualquer contribuição é bem-vinda. Escolha uma das opções abaixo para continuar pelo checkout.</p>
+
+    <div class="donation-grid">
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-1" target="_blank" rel="noopener noreferrer">R$ 5<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-2" target="_blank" rel="noopener noreferrer">R$ 10<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-3" target="_blank" rel="noopener noreferrer">R$ 20<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-4" target="_blank" rel="noopener noreferrer">R$ 30<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix5" target="_blank" rel="noopener noreferrer">R$ 40<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-6" target="_blank" rel="noopener noreferrer">R$ 50<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-7" target="_blank" rel="noopener noreferrer">R$ 60<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-8" target="_blank" rel="noopener noreferrer">R$ 70<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-9" target="_blank" rel="noopener noreferrer">R$ 80<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pix-10" target="_blank" rel="noopener noreferrer">R$ 90<small>Contribuir</small></a>
+      <a class="donation-button" href="https://pagseguropix.org/c/pkx" target="_blank" rel="noopener noreferrer">R$ 100<small>Contribuir</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="share">
+  <div class="section-inner">
+    <h2 class="section-title">Ajude compartilhando</h2>
+    <p>Se não puder contribuir, compartilhar esta campanha também é uma forma de ajudar.</p>
+    <button class="share-button" onclick="compartilhar()">Compartilhar campanha</button>
+    <button class="share-button" onclick="copiarLink()">Copiar endereço</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>Juntos pelo Bem</strong>
+  <p>Campanha solidária em parceria com os pais de João Pedro.</p>
+</footer>
+
+<script>
+function compartilhar() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Ajude João Pedro',
+      text: 'Conheça a campanha solidária para ajudar João Pedro.',
+      url: window.location.href
+    });
+  } else {
+    copiarLink();
+  }
+}
+
+function copiarLink() {
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => alert('Endereço copiado!'))
+    .catch(() => alert('Não foi possível copiar automaticamente. Copie o endereço do navegador.'));
+}
+</script>
+
+</body>
+</html>

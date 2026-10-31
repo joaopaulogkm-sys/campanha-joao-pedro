@@ -201,6 +201,7 @@ section { padding: 68px 7%; }
 }
 .supporter-heading strong { display: block; }
 .supporter-heading small { color: var(--muted); }
+
 .donation-notice {
   min-height: 90px;
   display: flex;
@@ -208,13 +209,35 @@ section { padding: 68px 7%; }
   gap: 15px;
   padding: 17px;
   background: #f5faf6;
+  border: 1px solid #e5f0e8;
   border-radius: 12px;
-  animation: appear .5s ease;
+  opacity: 0;
+  transform: translateY(15px);
 }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.donation-notice.show {
+  animation: noticeCycle 5s ease both;
 }
+
+@keyframes noticeCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
 .person-avatar {
   flex: 0 0 45px;
   width: 45px;
@@ -234,12 +257,6 @@ section { padding: 68px 7%; }
   font-size: 18px;
   font-weight: 800;
   white-space: nowrap;
-}
-.supporter-counter {
-  color: var(--muted);
-  text-align: center;
-  font-size: 13px;
-  margin-top: 13px;
 }
 
 /* Doações */
@@ -322,6 +339,7 @@ footer strong { color: white; }
 }
 @media(max-width:360px) {
   .donation-grid { grid-template-columns: 1fr; }
+  .person-value { font-size: 15px; }
 }
 @media(prefers-reduced-motion:reduce) {
   *, *::before, *::after {
@@ -417,6 +435,7 @@ footer strong { color: white; }
           <small>Contribuições registradas na campanha</small>
         </div>
       </div>
+
       <div class="donation-notice" id="donationNotice" aria-live="polite">
         <div class="person-avatar" id="personAvatar">A</div>
         <div class="person-info">
@@ -425,7 +444,6 @@ footer strong { color: white; }
         </div>
         <div class="person-value" id="personValue">R$ 5,00</div>
       </div>
-      <div class="supporter-counter" id="supporterCounter">Apoiador 1 de 18</div>
     </div>
   </div>
 </section>
@@ -495,26 +513,26 @@ function mostrarApoiador() {
   const pessoa = apoiadores[indice];
   const aviso = document.getElementById("donationNotice");
 
-  aviso.style.animation = "none";
-  void aviso.offsetWidth;
-  aviso.style.animation = "appear .5s ease";
-
   document.getElementById("personName").textContent = pessoa[0];
+
   document.getElementById("personValue").textContent =
     pessoa[1].toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
     });
+
   document.getElementById("personAvatar").textContent =
     pessoa[0].charAt(0).toUpperCase();
-  document.getElementById("supporterCounter").textContent =
-    "Apoiador " + (indice + 1) + " de " + apoiadores.length;
+
+  aviso.classList.remove("show");
+  void aviso.offsetWidth;
+  aviso.classList.add("show");
 
   indice = (indice + 1) % apoiadores.length;
 }
 
 mostrarApoiador();
-setInterval(mostrarApoiador, 4500);
+setInterval(mostrarApoiador, 5200);
 
 function compartilhar() {
   if (navigator.share) {
